@@ -1,0 +1,249 @@
+<%@ master language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Licensing - Idaho Outfitters and Guides Licensing Board</title>
+    <meta name = "DC.Title"				content = "Licensing - Idaho Outfitters and Guides Licensing Board" />
+    <meta name = "DC.Description"		content = "Outfitter Search" />
+    <meta name = "DC.Subject"			content = "Outfitters" />
+    <meta name = "DC.Date.Created"		content = "2011-10-07" />
+    <meta name = "DC.Date.LastModified"	content = "2019-04-05" />
+    <!--META TAGS-->
+    <meta http-equiv="Content-Type"     content="text/html; charset=iso-8859-1" />
+    <meta name = "DC.Publisher"         content = "State of Idaho (USA)" />
+    <meta name = "DC.Creator"           content = "State of Idaho" />
+    <meta name = "DC.Format"            content = "text/html" />
+    <meta name = "DC.language"          content = "en-US" />
+
+    <!--SCRIPT TAGS-->
+    <script src="https://oglb.idaho.gov/inc/js/js_clearInput.js" type="text/javascript"></script>
+    <script src="https://oglb.idaho.gov/inc/js/js_equalcolumns.js" type="text/javascript"></script>
+    <script src="https://oglb.idaho.gov/inc/js/js_SpryMenuBar.js" type="text/javascript"></script>
+    <script src="https://oglb.idaho.gov/inc/js/js_panel.js" type="text/javascript"></script>
+
+    <!--STYLESHEET TAGS-->
+    <link href="https://oglb.idaho.gov/inc/css/css_panel.css" rel="stylesheet" type="text/css" />
+    <link href="https://oglb.idaho.gov/inc/css/css_global.css" rel="stylesheet" type="text/css" />
+
+    <!--unhide the appropriate ** palette ** file for your site-->
+    <link href="https://oglb.idaho.gov/inc/css/css_palette_ponderosa.css" rel="stylesheet" type="text/css" />
+
+    <link href="https://oglb.idaho.gov/inc/css/css_promote.css" rel="stylesheet" type="text/css" />
+    <link href="https://oglb.idaho.gov/inc/css/css_local.css" rel="stylesheet" type="text/css" />
+    <!--[if IE]><link href="https://oglb.idaho.gov/inc/css/css_ie.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 6]><link href="https://oglb.idaho.gov/inc/css/css_ie_6.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 7]><link href="https://oglb.idaho.gov/inc/css/css_ie_7.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <link href="https://oglb.idaho.gov/favicon.ico.png" rel="icon" type="image/x-icon" />
+    <link href="https://oglb.idaho.gov/favicon.ico.png" rel="shortcut icon" type="image/x-icon" />
+    <asp:contentplaceholder id="ContentPlaceHolderHeader" runat="server" />  
+    <style type="text/css">
+    #activity-search strong { font-size: 1.4em; }
+    .caption { font-size: 0.8em; }
+    .margin-top { margin-top: 50px; }
+    .map { height: 440px; width: 100%; }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .map { height: 660px; }
+    }
+    .hidden { display: none; }
+    #outfittersearch ul li { list-style-type: disc; margin-left: 20px; }
+    #ctl00_ContentPlaceHolder1_OutfitterList a { vertical-align: top; }
+    .btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+        border-radius: 4px;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+    }
+    [role="button"] {
+        cursor: pointer;
+    }
+    .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .btn-group > .btn:first-child {
+        margin-left: 0;
+    }
+    .btn-group-justified > .btn, .btn-group-justified > .btn-group {
+        display: table-cell;
+        float: none;
+        width: 1%;
+    }
+    .pad-bottom {
+        padding-bottom: 20px;
+    }
+    .btn-group-justified {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: separate;
+    }
+    .btn-group, .btn-group-vertical {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .btn-group .btn + .btn, .btn-group .btn + .btn-group, .btn-group .btn-group + .btn, .btn-group .btn-group + .btn-group {
+        margin-left: -1px;
+    }
+    .btn-default {
+        color: #333;
+        background-color: #fff;
+        border-color: #ccc;
+    }
+    .btn.focus, .btn:focus, .btn:hover {
+        color: #333;
+        text-decoration: none;
+    }
+    .btn-default:hover {
+        color: #333;
+        background-color: #e6e6e6;
+        border-color: #adadad;
+    }
+    .btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open > .dropdown-toggle.btn-default.focus, .open > .dropdown-toggle.btn-default:focus, .open > .dropdown-toggle.btn-default:hover {
+        color: #333;
+        background-color: #d4d4d4;
+        border-color: #8c8c8c;
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="utilities">
+	        <p>Regulating the outfitting and guiding industry in Idaho</p>
+	        <ul>
+		        <li class="hide"><a href="#content">Skip to Content</a></li>
+		        <li><a href="https://oglb.idaho.gov/">Home</a></li>
+		        <li><a href="http://www.idaho.gov">Idaho.gov</a></li>
+		        <li><a href="https://oglb.idaho.gov/contact.html">Contact Us</a></li>
+	        </ul>
+        </div>
+
+        <div id="header">
+	        <div id="headerLogo"><a href="http://idaho.gov/"><span>Idaho</span></a>
+		        <!--choose from the three styles below-->
+		        <!--Version One Heading--><!--<h1 id="bigH1" class="headingOne">Outfitters and Guides Licensing Board</h1>-->
+		        <!--Version Two Heading--><h1 class="headingTwo">Outfitters and Guides<br />Licensing Board</h1>
+		        <!--Version Three Heading--><!--<h1 class="headingThree"><span class="smaller">Official Website of the</span><br />Idaho House</h1>-->
+	        </div>
+	        <p id="search"><a href="https://oglb.idaho.gov/search.html">Search</a></p>
+
+        </div>
+        <div id="leftCol">
+            <!--NEW MENU CODE-->
+            <ul id="leftNav" class="MenuBarVertical MenuBarActive"> 
+	            <li id="topNav"><a class="MenuBarItemSubmenu" href="https://idfg.idaho.gov/ifwis/ioglb/">Outfitter Search</a>
+                  <ul class="submenu">
+		            <li><a class="first" href="https://idfg.idaho.gov/ifwis/ioglb/outfitterguide.aspx?t=hunting" tabindex="-1">Hunting Outfitters</a></li>
+		            <li><a href="https://idfg.idaho.gov/ifwis/ioglb/outfitterguide.aspx?t=fishing" tabindex="-1">Fishing Outfitters</a></li>
+		            <li><a href="https://idfg.idaho.gov/ifwis/ioglb/outfitterguide.aspx?t=boating" tabindex="-1">Boating Outfitters</a></li> 
+		            <li><a href="https://idfg.idaho.gov/ifwis/ioglb/outfitterguide.aspx?t=recreation" tabindex="-1">Recreation Outfitters</a></li> 
+		            <li><a class="last" href="https://idfg.idaho.gov/ifwis/ioglb/outfitterguide.aspx" tabindex="-1">Search All Guided Activities</a></li> 
+                  </ul>	
+	            </li>
+	            <li><a class="MenuBarItemSubmenu" href="https://oglb.idaho.gov//licensing/" tabindex="-1">Licensing</a>
+                  <ul class="submenu">
+                    <li><a class="first" href="https://oglb.idaho.gov//licensing/forms.html" tabindex="-1">Forms</a></li>
+                    <li><a href="https://oglb.idaho.gov//licensing/fees.html" tabindex="-1">Fees</a></li> 
+                    <li><a href="https://oglb.idaho.gov//licensing/first_aid.html" tabindex="-1" class="">Accepted First Aid Certifications</a></li>
+                    <li><a class="last" href="https://oglb.idaho.gov//licensing/online_services.html" tabindex="-1">Online Licensing Services</a></li>
+		             <li><a class="last" href="https://oglb.idaho.gov//licensing/renewals.html" tabindex="-1">Outfitter and Designated Agent Renewals</a></li>
+                  </ul>	
+	            </li>
+	            <li><a class="MenuBarItemSubmenu" href="https://oglb.idaho.gov//news/" tabindex="-1">News, Bulletins, Newsletters</a>
+                  <ul class="submenu">
+                    <li><a class="first" href="https://oglb.idaho.gov//news/#bulletins" tabindex="-1">Bulletins</a></li>
+                    <li><a class="last" href="https://oglb.idaho.gov//news/#newsletters" tabindex="-1">Newsletters</a></li>
+                  </ul>	
+	            </li>
+	            <li><a class="MenuBarItemSubmenu" href="https://oglb.idaho.gov//documents/" tabindex="-1">Documents for Review, Outfitter Big Game Tag Allocation, User Manuals, Other Documents, PowerPoint Presentations</a>
+                  <ul class="submenu">
+                    <li><a class="first" href="https://oglb.idaho.gov//documents/review.html" tabindex="-1">Documents for Review</a></li>
+                    <li><a href="https://oglb.idaho.gov//documents/allocation.html" tabindex="-1">Outfitter Big Game Tag Allocation</a></li>
+                    <li><a class="last" href="https://oglb.idaho.gov//documents/manuals.html" tabindex="-1">User Manuals, Other Documents, PowerPoint Presentations</a></li>
+                  </ul>	
+	            </li>
+	            <li><a class="MenuBarItemSubmenu" href="https://oglb.idaho.gov//opportunities/" tabindex="-1">Outfitting Business Opportunities</a></li>
+	            <li><a class="MenuBarItemSubmenu" href="https://oglb.idaho.gov//enforcement/" tabindex="-1">Enforcement and Complaints</a></li> 
+	            <li><a class="MenuBarItemSubmenu" href="https://oglb.idaho.gov//rules/" tabindex="-1">Statutes and Rules, MOUs, Guidance Letters, Policies, Strategic Plans</a>
+                  <ul class="submenu">
+                    <li><a class="first" href="https://oglb.idaho.gov//rules/" tabindex="-1">Statutes and Rules</a></li>
+                    <li><a href="https://oglb.idaho.gov//rules/" tabindex="-1">Memorandums of Understanding (MOUs)</a></li>
+                    <li><a href="https://oglb.idaho.gov//rules/" tabindex="-1">Guidance Letters</a></li>
+                    <li><a href="https://oglb.idaho.gov//rules/" tabindex="-1">Policies</a></li>
+                    <li><a class="last" href="https://oglb.idaho.gov//rules/" tabindex="-1">Strategic Plans</a></li>
+                  </ul>		
+	            </li> 
+	            <li><a class="MenuBarItemSubmenu" href="https://oglb.idaho.gov//rules/promulgations.html" tabindex="-1">Rule Promulgations and Negotiated Rulemaking</a>
+                  <ul class="submenu">
+                    <li><a class="first" href="https://oglb.idaho.gov//rules/promulgations.html" tabindex="-1">Negotiated Rulemaking</a></li>
+                    <li><a class="last" href="https://oglb.idaho.gov//rules/promulgations.html" tabindex="-1">Temporary /Proposed Rules</a></li>
+                  </ul>		
+	            </li> 
+	            <li><a class="MenuBarItemSubmenu" href="https://oglb.idaho.gov//board/" tabindex="-1">Board Meetings</a>
+                  <ul class="submenu">
+                    <li><a class="first" href="https://oglb.idaho.gov//board/#agendas" tabindex="-1">Agenda</a></li>
+                    <li><a href="https://oglb.idaho.gov//board/#minutes" tabindex="-1">Minutes</a></li>
+                    <li><a class="last" href="https://oglb.idaho.gov//board/archives.html" tabindex="-1">Archived Minutes</a></li> 
+                  </ul>	
+	            </li>
+	            <li><a class="MenuBarItemSubmenu" href="https://oglb.idaho.gov//links/" tabindex="-1">Useful Links</a></li>
+            </ul>
+            <script type="text/javascript">
+                <!--
+                var leftNav = new Spry.Widget.MenuBar("leftNav", {imgRight:"https://oglb.idaho.gov//inc/img/SpryMenuBarRightHover.gif"});
+                //-->
+            </script>
+        </div>
+        <div style="background-image:url(https://oglb.idaho.gov/inc/img/mainContentGradient_ponderosa.jpg); background-position:top; background-repeat:repeat-x; margin-left: 135px;">
+            <div id="content">   
+                <!--BEGIN YOUR PAGE CONTENT BELOW-->	
+                <form runat="server">
+                    <div id="outfittersearch">
+                        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server" />  
+                    </div>
+                </form>
+                <!--END YOUR PAGE CONTENT ABOVE-->
+            </div>
+        </div>
+        <div id="footer">
+	        <ul>
+		        <li><a href="https://oglb.idaho.gov/contact.html">Contact Us</a></li>
+		        <li><a href="https://idaho.gov">Idaho.gov</a></li>
+		        <li class="externallink"><img class="externallink" src="https://oglb.idaho.gov/inc/img/clear.png" alt="external link" /> = external link</li>	
+	        </ul>
+	        <ul class="copyright">
+		        <li><a href="https://idaho.gov/accessibility.html">Accessibility</a></li>
+		        <li><a href="https://idaho.gov/privacy.html">Privacy &amp; Security</a></li>
+		        <li><a href="https://cybersecurity.idaho.gov">Cybersecurity</a></li>
+	        </ul>
+        </div>
+        <asp:contentplaceholder id="ContentPlaceHolderFooter" runat="server" />  
+    </div>
+</body>
+</html>
+
